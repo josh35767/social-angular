@@ -1,1 +1,14 @@
-<img src="/assets/{{user.profilePicture}}" alt="">
+<h1> User Profile </h1>
+<form (ngSubmit)="submitForm()">
+  <div>
+    <label for="email-input">Email:</label>
+    <input type="text" name="email" id="email-input" placeholder="email@email.com">
+  </div>
+  <div>
+    <label for="password-input">Password:</label>
+    <input type="password" name="email" id="password-input" placeholder="********">
+  </div>
+  <div>
+    <button class="button"> Log In </button>
+  </div>
+</form>
