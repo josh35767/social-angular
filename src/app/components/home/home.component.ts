@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
   message: string = "";
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -42,11 +44,7 @@ export class HomeComponent implements OnInit {
       this.loginEmail,
       this.loginPassword
     ).then(theUser => {
-      console.log(theUser);
-      console.log("Login Successful.");
-      
-      this.loginEmail = "";
-      this.loginPassword = "";
+      this.router.navigate(['/profile'])
     })
     .catch((err) => {
       const parsedError = err.json();

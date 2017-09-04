@@ -44,4 +44,14 @@ export class AuthService {
 
   }
 
+  checklogin() {
+    return this.http
+      .get(
+        this.baseURL + 'api/checklogin',
+        { withCredentials: true }
+      )
+      .toPromise()
+      .then(res => res.json ());
+  }
+
 }
